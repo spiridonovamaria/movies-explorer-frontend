@@ -1,0 +1,111 @@
+.search {
+    margin: 60px 70px 10px;
+    max-width: 1280px;
+}
+
+.search__form {
+    border-radius: 40px;
+    background-color: #2F2F2F;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 42px;
+    max-width: 1140px;
+    height: 46px;
+}
+
+.search__input {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    font-style: normal;
+    line-height: 17px;
+    color: #8B8B8B;
+    border-radius: 40px;
+    border: none;
+    padding: 14px 0 14px 22px;
+    max-width: 43px;
+    background-color: #2F2F2F;
+}
+
+.search__button {
+    background-image: url(../../../images/find.svg);
+    background-color: #2F2F2F;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    background-repeat: no-repeat;
+    margin-right: 6px;
+}
+
+.search__container {
+    max-width: 1140px;
+    border-bottom: 1px solid #424242;
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: center;
+}
+
+.search__checkbox {
+    display: inline-block;
+    gap: 10px;
+}
+
+.search__input-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    appearance: none;
+}
+.search__inner {
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 18px;
+    display: inline-block;
+    position: relative;
+    padding-left: 48px;
+    
+}
+
+.search__button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.search__inner:before {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 36px;
+    height: 20px;
+    border-radius: 18px;
+    background-color:  #3DDC84;
+    transition: background-color .3s;
+}
+.search__inner::after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    left: 18px;
+    top: 2px;
+    transition: background-color .3s, right .3s;
+}
+.search__input-checkbox:checked+.search__inner::before {
+    background-color: #FFFFFF;
+}
+
+.search__input-checkbox:checked+.search__inner::after {
+    background-color: #3DDC84;
+    left: 2px;
+}
+

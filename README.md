@@ -1,1 +1,1 @@
-# movies-explorer-frontend
+# Макет в Figma: dark-3

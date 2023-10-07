@@ -1,0 +1,80 @@
+.cards {
+  max-width: 1280px;
+}
+
+.cards__container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 24px;
+  grid-row-gap: 37px;
+  padding: 0;
+  list-style: none;
+  margin: 70px 70px 10px;
+}
+
+.more {
+  margin: 50px 70px 80px;
+}
+
+.more__button {
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 14.52px;
+  border-radius: 6px;
+  background-color: #2F2F2F;
+  color: #FFFFFF;
+  border: none;
+
+  padding: 11px 0 9px;
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+  .cards {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+  .cards__container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    margin: 70px 30px 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+  .more {
+    margin: 50px 30px 80px;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+  .more__button {
+    padding: 11px 0 9px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .cards__container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-column-gap: 14px;
+    margin: 40px 10px 26px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .more {
+    margin: 50px 10px 80px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .more__button {
+    padding: 11px 0 9px;
+  }
+}
