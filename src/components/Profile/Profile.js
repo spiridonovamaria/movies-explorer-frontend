@@ -6,10 +6,10 @@ function Profile() {
     return (
         <> <Header loggedIn={true} />
             <div className="profile">
-                <h2 className="profile__header">Привет, Мария!</h2>
-                <form className="profile__form" >
+                <h1 className="profile__header">Привет, Мария!</h1>
+                <form className="profile__form" name="profile" noValidate>
                     <div className="profile__container">
-                        <label className="profile__label_name">Имя</label>
+                        <label className="profile__label profile__label_name">Имя</label>
                         <input
                             className="profile__input"
                             type="text"
@@ -22,7 +22,7 @@ function Profile() {
 
                     </div>
                     <div className="profile__container">
-                        <label className="profile__label_email">E-mail</label>
+                        <label className="profile__label profile__label_email">E-mail</label>
                         <input
                             className="profile__input"
                             type="email"

@@ -10,9 +10,6 @@ function MoviesCardList() {
                 {Cards.map((card) =>
                     (<MoviesCard duration={card.duration} image={card.image} nameRU={card.nameRU} key={card._id} />))}
             </div>
-            <div className="more">
-                <button className="more__button" type="button">Еще</button>
-            </div>
         </section>
     );
 }

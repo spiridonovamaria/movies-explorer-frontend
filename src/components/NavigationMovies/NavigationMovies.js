@@ -13,14 +13,14 @@ function NavigationMovies(loggedIn) {
         return (
             <>
                 <section className={location === "/" && "nav-movies"}>
-                    <div className="nav-movies__info">
+                    <nav className="nav-movies__info">
                         <div className="nav-movies__container">
                             <NavLink className={({ isActive }) => `${isActive
-                                ? "nav-movies__link-active"
+                                ? "nav-movies__link nav-movies__link-active"
                                 : "nav-movies__link"}`} to="/movies">Фильмы</NavLink>
                             <NavLink className={
                                 ({ isActive }) => `${isActive
-                                    ? "nav-movies__link-active"
+                                    ? "nav-movies__link nav-movies__link-active"
                                     : "nav-movies__link"}`
                             } to="/saved-movies">Сохранённые фильмы</NavLink>
                         </div>
@@ -28,28 +28,28 @@ function NavigationMovies(loggedIn) {
                             <p className="nav-movies__header">Аккаунт</p>
                             <div className="nav-movies__logo"></div>
                         </NavLink>
-                    </div>
+                    </nav>
                     <div className="mobile-menu">
                         <button className="mobile-menu__button-open" type="button" onClick={toggleMobileMenu}></button>
                         <div className={`mobile-menu__open ${isMobileMenu && "mobile-menu__open-active"}`}>
                             <button className="mobile-menu__button-exit" type="button" onClick={toggleMobileMenu}></button>
-                            <div className="mobile-menu__info">
+                            <nav className="mobile-menu__info">
                                 <NavLink className={
                                     ({ isActive }) => `${isActive
-                                        ? "mobile-menu__link-active"
+                                        ? "mobile-menu__link mobile-menu__link-active"
                                         : "mobile-menu__link"}`}
                                     to="/" onClick={toggleMobileMenu}>Главная</NavLink>
                                 <NavLink className={
                                     ({ isActive }) => `${isActive
-                                        ? "mobile-menu__link-active"
+                                        ? "mobile-menu__link mobile-menu__link-active"
                                         : "mobile-menu__link"}`}
                                     to="/movies" onClick={toggleMobileMenu}>Фильмы</NavLink>
                                 <NavLink className={
                                     ({ isActive }) => `${isActive
-                                        ? "mobile-menu__link-active"
+                                        ? "mobile-menu__link mobile-menu__link-active"
                                         : "mobile-menu__link"}`}
                                     to="/saved-movies" onClick={toggleMobileMenu}>Сохранённые фильмы</NavLink>
-                            </div>
+                            </nav>
                             <NavLink className="mobile-menu__link-account" to="/profile" onClick={toggleMobileMenu}>
                                 <p className="mobile-menu__header">Аккаунт</p>
                                 <div className="mobile-menu__logo"></div>

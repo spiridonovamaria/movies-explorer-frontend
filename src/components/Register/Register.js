@@ -9,8 +9,8 @@ function Register() {
             <Link className="register__link_logo" to='/'>
                 <img className="register__logo" src={logo} alt='Логотип' />
             </Link>
-            <h2 className="register__header">Добро пожаловать!</h2>
-            <form className="register__form">
+            <h1 className="register__header">Добро пожаловать!</h1>
+            <form className="register__form" name="register" noValidate>
                 <label className="register__label">Имя
                     <input
                         className="register__input"

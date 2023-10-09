@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 function NavigationMain() {
     return (
         <>
-            <div className="nav-main">
-                <Link className="nav-main__register" to="/signup">Регистрация</Link>
-                <Link className="nav-main__login" to="/signin">Войти</Link>
-            </div>
+            <nav className="nav-main">
+                <Link className="nav-main__link nav-main__link-register" to="/signup">Регистрация</Link>
+                <Link className="nav-main__link nav-main__link-login" to="/signin">Войти</Link>
+            </nav>
         </>
     );
 }
 
-export default NavigationMain;
+export default NavigationMain; 

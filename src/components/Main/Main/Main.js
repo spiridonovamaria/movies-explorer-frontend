@@ -12,17 +12,19 @@ import { useState } from 'react';
 
 function Movies() {
     const [loggedIn] = useState(false);
-    return (
+    return (<>
+        <Header loggedIn={loggedIn} />
         <main>
-            <Header loggedIn={loggedIn} />
+
             <Promo />
             <NavTab />
             <AboutProject />
             <Techs />
             <AboutMe />
             <Portfolio />
-            <Footer />
         </main>
+        <Footer /></>
+
     );
 }
 

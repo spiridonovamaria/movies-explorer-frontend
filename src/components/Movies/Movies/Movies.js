@@ -3,16 +3,20 @@ import './Movies.css';
 import SearchForm from '../SearchForm/SearchForm';
 import MoviesCardList from '../MoviesCardList/MoviesCardList';
 import Header from '../../Header/Header';
+import More from '../More/More';
 import Footer from '../../Footer/Footer';
 
 function Movies() {
-    return (
+    return (<>
+        <Header loggedIn={true} />
         <main>
-            <Header loggedIn={true}/>
-            <SearchForm/>
-            <MoviesCardList/>
-            <Footer />
+            <SearchForm />
+            <MoviesCardList />
+            <More />
         </main>
+        <Footer />
+    </>
+
     );
 }
 

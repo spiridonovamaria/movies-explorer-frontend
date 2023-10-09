@@ -14,6 +14,7 @@
     padding-bottom: 23px;
     border-bottom: 1px solid #DADADA;
     margin: 0;
+    letter-spacing: -0.88px;
 }
 
 .techs__container {
@@ -33,6 +34,7 @@
     min-height: 58px;
     padding-bottom: 26px;
     margin: 0;
+    letter-spacing: -2px;
 }
 
 .techs__subtitle {
@@ -44,6 +46,7 @@
     margin: 0;
     text-align: center;
     width: 460px;
+    letter-spacing: -0.56px;
 }
 
 .techs__info {
@@ -53,6 +56,7 @@
     display: grid;
     grid-template-columns: repeat(7, 90px);
     gap: 10px;
+    padding: 0;
 }
 
 .techs__item {
@@ -65,6 +69,7 @@
     background-color: #303030;
     border-radius: 10px;
     padding: 21px 0 22px;
+    letter-spacing: -0.56px;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 768px) {
@@ -82,6 +87,7 @@
 @media screen and (max-width: 1200px) and (min-width: 768px) {
     .techs__title {
         padding-bottom: 22px;
+   
     }
 }
 
@@ -89,6 +95,7 @@
     .techs__subtitle {
         font-size: 12px;
         line-height: 18px;
+        letter-spacing: -0.48px;
     }
 }
 
@@ -104,13 +111,15 @@
         line-height: 14.52px;
         width: 84px;
         padding: 21px 0 21px;
+        letter-spacing: -0.48px;
     }
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
     .techs {
-        min-height: 651px;
+        min-height: 320px;
         padding: 70px 14px;
+        background-color: #202020;
     }
 }
 
@@ -119,6 +128,8 @@
         font-size: 18px;
         line-height: 21.78px;
         padding-bottom: 28px;
+        letter-spacing: -0.72px;
+        border-bottom: 1px solid #000000;
     }
 }
 
@@ -132,7 +143,8 @@
     .techs__title {
         font-size: 30px;
         line-height: 36.31px;
-        padding-bottom: 24px;
+        letter-spacing: -1.2px;
+        padding: 0;
     }
 }
 
@@ -140,11 +152,25 @@
     .techs__subtitle {
         font-size: 11px;
         line-height: 16px;
+        letter-spacing: -0.44px;
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
     .techs__info {
         grid-template-columns: repeat(2, 84px);
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+    .techs__item {
+        font-size: 12px;
+        line-height: 14.52px;
+        text-align: center;
+        background-color: #303030;
+        border-radius: 10px;
+        padding: 21px 0;
+        letter-spacing: -0.56px;
     }
 }

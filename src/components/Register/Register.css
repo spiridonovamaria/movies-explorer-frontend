@@ -3,6 +3,7 @@
     flex-direction: column;
     margin: 70px auto;
     max-width: 396px;
+ 
 }
 
 .register__logo {
@@ -38,6 +39,11 @@
     color: #8B8B8B;
 }
 
+.register__label:last-child {
+    margin-bottom: 10px;
+}
+
+
 .register__input {
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 400;
@@ -50,7 +56,7 @@
     height: 46px;
     color: #FFFFFF;
     margin-top: 10px;
-    padding: 15px;
+    padding: 0 0 0 15px;
 }
 
 .register__error {
@@ -70,7 +76,7 @@
     line-height: 16.94px;
     background-color: #4285F4;
     color: #FFFFFF;
-    margin-top: 69px;
+    margin-top: 60px;
     padding: 13px 0 15px 0;
     border-radius: 3px;
     border: none;
@@ -105,10 +111,18 @@
     }
 }
 
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+        .register__logo {
+            text-align: left;
+        }
+}
+
+
 @media screen and (max-width: 767px) and (min-width: 320px) {
     .register {
         max-width: 260px;
         margin: 56px auto 30px;
+        align-items: center;
     }
 }
 
@@ -127,7 +141,7 @@
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
     .register__submit-button {
-        margin-top: 267px;
+        margin-top: 150px;
         padding: 15px 0 15px;
         height: 45px;
         max-width: 260px;
@@ -138,11 +152,11 @@
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
     .register__login {
-        margin: 14px auto 0;
-        height: 15px;
-        font-size: 12px;
-        line-height: 14.52px;
-        text-align: left;
+        margin: 14px 0 0 0;
+       max-width: 188px;
+       font-size: 12px;
+       line-height: 14.52px;
+      max-width: 188px;
     }
 }
 

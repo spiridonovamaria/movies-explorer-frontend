@@ -13,6 +13,7 @@
     font-size: 24px;
     font-style: normal;
     line-height: 29.05px;
+    
 }
 
 .profile__form {
@@ -30,32 +31,28 @@
 
 .profile__container:last-of-type {
     border: none;
+    padding: 16px 0 0;
 }
 
-.profile__label_name {
+.profile__container:first-child {
+    padding: 0 0 17px;
+}
+.profile__label {
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 500;
     font-size: 11px;
     font-style: normal;
     line-height: 13.31px;
-    height: 14px;
+    min-height: 14px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+}
+.profile__label_name {
+    
     margin: 0;
 }
 
-.profile__label_email {
-    font-family: 'Inter', Arial, sans-serif;
-    font-weight: 500;
-    font-size: 11px;
-    font-style: normal;
-    line-height: 13.31px;
-    height: 14px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-}
 
 .profile__input {
     font-family: 'Inter', Arial, sans-serif;
@@ -64,7 +61,7 @@
     font-style: normal;
     line-height: 13.31px;
     width: 122px;
-    height: 14px;
+    min-height: 14px;
     color: #FFFFFF;
     border: none;
     background-color: transparent;
@@ -111,14 +108,27 @@
         margin: 236px auto 269px;
     }
 }
-
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .profile__header {
+        margin: 0 0 96px;
+    }
+}
+@media screen and (max-width: 1200px) and (min-width: 768px) {
+    .profile__links {
+        margin-top: 210px;
+    }
+}
 @media screen and (max-width: 767px) and (min-width: 320px) {
     .profile {
         max-width: 300px;
         margin: 70px auto 40px;
     }
 }
-
+@media screen and (max-width: 767px) and (min-width: 320px) {
+    .profile__links {
+        margin-top: 379px;
+    }
+}
 @media screen and (max-width: 767px) and (min-width: 320px) {
     .profile__form {
         max-width: 260px;

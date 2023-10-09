@@ -9,8 +9,8 @@ function Login() {
             <Link className="login__link_logo" to='/'>
                 <img className="login__logo" src={logo} alt='Логотип' />
             </Link>
-            <h2 className="login__header">Рады видеть!</h2>
-            <form className="login__form" >
+            <h1 className="login__header">Рады видеть!</h1>
+            <form className="login__form" name="login" noValidate>
                 <label className="login__label">E-mail
                     <input
                         className="login__input"
