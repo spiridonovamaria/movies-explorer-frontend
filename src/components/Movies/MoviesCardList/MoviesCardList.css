@@ -1,40 +1,39 @@
 .cards {
-  margin: 0;
-  padding: 0;
-  max-width: 100%;
+  margin: 0 auto;
+  background-color: rgba(32, 32, 32, 1);
+  color: rgb(255, 255, 255, 1);
+  display: flex;
+  justify-content: center;
 }
 
 .cards__container {
+  width: 89%;
+  margin: 0;
+  padding: 0 0 10px;
+  list-style: none;
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 24px;
-  grid-row-gap: 37px;
-  padding: 0;
-  list-style: none;
-  margin: 70px 70px 10px;
+  gap: 37px 22px;
+  grid-template-columns: repeat(auto-fill, 364px);
 }
 
 @media screen and (max-width: 1200px) and (min-width: 768px) {
-
 }
 
-@media screen and (max-width: 1200px) and (min-width: 768px) {
+@media screen and (max-width: 1276px) and (min-width: 768px) {
   .cards__container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
-    margin: 70px 30px 70px;
- 
+    width: 92%;
+    padding-bottom: 30px;
+    gap: 30px 30px;
+    grid-template-columns: repeat(auto-fill, 338px);
   }
 }
 
-
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .cards__container {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 16px;
-    margin-top: 50px;
-
+    width: 94%;
+    padding: 40px 10px 26px;
+    row-gap: 14px;
+    grid-template-columns: repeat(auto-fill, 300px);
   }
 }

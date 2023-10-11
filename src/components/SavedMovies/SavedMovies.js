@@ -14,6 +14,7 @@ function SavedMovies() {
                 <SearchForm />
                 <MoviesCardList />
 
+                <div className='save__divider'></div>
             </main>
             <Footer /></>
 

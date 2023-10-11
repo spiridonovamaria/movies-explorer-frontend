@@ -1,3 +1,16 @@
 .save {
-    align-items: center;
+  align-items: center;
+}
+
+.save__divider {
+  width: 100%;
+  height: 140px;
+  padding-top: 97px;
+  background-color: rgba(32, 32, 32, 1);
+}
+
+@media screen and (max-width: 1276px) and (min-width: 320px) {
+  .save__divider {
+    padding: 0;
+  }
 }

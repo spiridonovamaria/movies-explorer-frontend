@@ -1,50 +1,56 @@
 .promo {
-    background-image: url(../../../images/landing_logo.svg);
-    background-size: 320px;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    background-color: #073042;
+  width: 100%;
+  /* min-height: 524px; */
+  background-image: url(../../../images/landing_logo.svg);
+  background-size: 320px;
+  background-position: center 82px;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  background-color: #073042;
 }
 
 .promo__header {
-    font-family: 'Inter', Arial, sans-serif;
-    font-weight: 400;
-    font-size: 50px;
-    font-style: normal;
-    line-height: 58px;
-    margin: 0;
-    padding: 184px 0 224px;
-    max-width: 730px;
-    text-align: center;
-    letter-spacing: -2px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  font-style: normal;
+  line-height: 58px;
+  margin: 0;
+  padding: 184px 0 224px;
+  max-width: 730px;
+  text-align: center;
+  letter-spacing: -2px;
 }
 
 @media screen and (max-width: 1200px) and (min-width: 768px) {
-    .promo {
-        min-height: 784px;
-    }
+  .promo {
+    /* min-height: 784px; */
+    background-position-y: 224px;
+  }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 768px) {
-    .promo__header {
-        padding: 326px 0 342px;
-    }
+  .promo__header {
+    /* width: 95%; */
+    padding: 326px 0 342px;
+  }
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
-    .promo {
-        min-height: 570px;
-        background-size: 248px;
-    }
+  .promo {
+    /* min-height: 570px; */
+    background-position-y: 142px;
+    background-size: 248px;
+  }
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
-    .promo__header {
-        font-size: 31px;
-        line-height: 39px;
-        padding: 207px 10px 246px;
-        letter-spacing: -1.24px;
-    }
+  .promo__header {
+    /* width: 94%; */
+    font-size: 31px;
+    line-height: 39px;
+    padding: 207px 10px 246px;
+    letter-spacing: -1.24px;
+  }
 }

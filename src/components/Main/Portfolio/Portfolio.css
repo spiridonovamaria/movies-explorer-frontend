@@ -1,144 +1,125 @@
 .portfolio {
-    display: flex;
-    flex-direction: column;
-    padding: 0 70px 125px;
-   
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 70px 125px;
+  width: 89%;
 }
 
 .portfolio__header {
-    font-family: 'Inter', Arial, sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    font-style: normal;
-    line-height: 20px;
-    color: #8B8B8B;
-    margin: 0 0 50px 0;
-    
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 20px;
+  color: #8b8b8b;
+  margin: 0 0 50px 0;
 }
 
 .portfolio__menu {
-    list-style: none;
-    list-style-type: none;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+  list-style: none;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .portfolio__item {
-    border-bottom: 1px solid #424242;
-    padding-bottom: 19px;
-    padding-top: 20px;
-    width: 100%;
+  border-bottom: 1px solid #424242;
+  padding-bottom: 19px;
+  width: 100%;
 }
 
 .portfolio__item:last-child {
-    border: none;
-    padding-bottom: 0;
-}
-
-.portfolio__item:first-child {
-    padding-top: 0;
+  border: none;
+  padding-bottom: 0;
 }
 
 .portfolio__link {
-    font-family: 'Inter', Arial, sans-serif;
-    font-weight: 400;
-    font-size: 30px;
-    font-style: normal;
-    line-height: 50px;
-    color: #FFFFFF;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
-    height: 50px;
-    letter-spacing: -1.2px;
-    width: 100%;
+  font-family: 'Inter', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  font-style: normal;
+  line-height: 50px;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  /* height: 50px; */
+  letter-spacing: -1.2px;
+  width: 100%;
 }
 
-.portfolio__arrow {
-    width: 29px;
-    height: 60px;
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 50px;
-    letter-spacing: -1.2px;
-    margin: 0;
+.portfolio__link::after {
+  content: '↗';
 }
 
 @media screen and (max-width: 1200px) and (min-width: 768px) {
-    .portfolio {
-        padding: 0 50px 90px;
-    }
+  .portfolio {
+    padding: 0 50px 90px;
+    width: 87%;
+  }
 }
 
 @media screen and (max-width: 1200px) and (min-width: 768px) {
-    .portfolio__item {
-        max-width: 668px;
-    }
+  /* .portfolio__item {
+    max-width: 668px;
+  } */
 }
 
 @media screen and (max-width: 1200px) and (min-width: 768px) {
-    .portfolio__link {
-        font-size: 28px;
-        letter-spacing: -1.12px;
-    }
-}
-
-@media screen and (max-width: 1200px) and (min-width: 768px) {
-    .portfolio__arrow {
-        width: 27px;
-    }
+  .portfolio__link {
+    font-size: 28px;
+    letter-spacing: -1.12px;
+  }
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
-    .portfolio {
-        padding: 0 14px 70px;
-    }
+  .portfolio {
+    /* padding: 0 14px 70px; */
+    margin: 0 auto 70px;
+    padding: 0;
+    /* padding: 70px 14px; */
+    width: 91%;
+  }
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
-    .portfolio__item {
-        max-width: 292px;
-        min-height: 28px;
-    }
-    .portfolio__item:last-child {
-        border: none;
-        padding-bottom: 0;
-    }
-    
-    .portfolio__item:first-child {
-        padding-top: 0;
-    }
-    
+  /* .portfolio__item {
+    max-width: 292px;
+    min-height: 28px;
+  } */
+  /* .portfolio__item:last-child {
+    border: none;
+    padding-bottom: 0;
+  }
+
+  .portfolio__item:first-child {
+    padding-top: 0;
+  } */
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
-    .portfolio__header {
-        font-size: 14px;
-        margin: 0 0 40px 0;
-    }
+  .portfolio__header {
+    font-size: 14px;
+    margin: 0 0 40px 0;
+  }
 }
 
 @media screen and (max-width: 767px) and (min-width: 320px) {
-    .portfolio__link {
-        font-size: 18px;
-        line-height: 28px;
-        letter-spacing: -0.72px;
-    }
-}
-
-@media screen and (max-width: 767px) and (min-width: 320px) {
-    .portfolio__arrow {
-        width: 18px;
-        font-size: 18px;
-        line-height: 28px;
-    }
+  .portfolio__link {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.72px;
+  }
 }
 
 .portfolio__link:hover {
-    opacity: 0.7;
-    cursor: pointer;
+  opacity: 0.7;
+  cursor: pointer;
 }
