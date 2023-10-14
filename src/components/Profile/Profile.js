@@ -1,108 +1,98 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Profile.css';
+import React, { useEffect, useContext, useState } from 'react';
+import CurrentUserContext from '../../contexts/CurrentUserContext';
 import Header from '../Header/Header';
+import { EMAIL_PATTERN } from '../../utils/constants';
+import useForm from '../../hooks/useForm';
+import './Profile.css';
 
-function Profile() {
-  const [isEdit, setIsEdit] = React.useState(false);
+function Profile({ isLoading, signOut, onUpdateUser, loggedIn }) {
+    const currentUser = useContext(CurrentUserContext);
+    const [isLastValues, setIsLastValues] = useState(false);
+    const { enteredValues, errors, handleChangeInput, isFormValid, resetForm } = useForm();
 
-  function handleEdit() {
-    setIsEdit(true);
-  }
+    useEffect(() => {
+        if (currentUser) {
+            resetForm(currentUser);
+        }
+    }, [currentUser, resetForm]);
 
-  function handleSave(e) {
-    e.preventDefault();
-    setIsEdit(false);
-  }
+    function editProfileUserInfo(event) {
+        event.preventDefault();
+        onUpdateUser({
+            name: enteredValues.name,
+            email: enteredValues.email
+        });
+    }
 
-  const [isValid, setIsValid] = React.useState(false);
-  const [errors, setErrors] = React.useState({});
-  const [formValue, setFormValue] = React.useState({
-    name: '',
-    email: ''
-  });
+    useEffect(() => {
+        if (currentUser.name === enteredValues.name && currentUser.email === enteredValues.email) {
+            setIsLastValues(true);
+        } else {
+            setIsLastValues(false);
+        }
 
-  function handleChange(e) {
-    const input = e.target;
-    const { value, name } = input;
-    setFormValue({ ...formValue, [name]: value });
-    setErrors({ ...errors, [name]: input.validationMessage });
-    setIsValid(input.closest('form').checkValidity());
-  }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [enteredValues]);
 
-  return (
-    <>
-      <Header loggedIn={true} />
-      <main className='profile'>
-        <section className='profile__container'>
-          <h1 className='profile__header'>Привет, Мария!</h1>
+    return (
+        <>
+            <Header loggedIn={loggedIn} />
+            <section className="profile">
+                <h1 className="profile__header">Привет, {currentUser.name}!</h1>
+                <form id="form" className="profile__form" onSubmit={editProfileUserInfo} noValidate>
+                    <label className="profile__label">
+                        Имя
+                        <input
+                            name="name"
+                            className="profile__input"
+                            id="name-input"
+                            type="text"
+                            minLength="2"
+                            maxLength="40"
+                            required
+                            placeholder="Ваше имя"
+                            onChange={handleChangeInput}
+                            value={enteredValues.name || ''}
+                        />
+                        <span className="profile__input-error">{errors.name}</span>
+                    </label>
 
-          <form className='profile__form' name='profile' noValidate>
-            <label className='profile__label'>
-              Имя
-              <input
-                className={`profile__input ${errors.name ? 'profile__input_error' : ''}`}
-                type='text'
-                name='name'
-                required
-                minLength={5}
-                maxLength={50}
-                onChange={handleChange}
-                value={formValue.name || 'Мария'}
-              />
-            </label>
-            <span
-              className={`profile__input-error ${!isValid ? 'profile__input-error_active' : ''}`}
-            >
-              {errors.name}
-            </span>
+                    <div className="profile__border"></div>
+                    <label className="profile__label">
+                        E-mail
+                        <input
+                            name="email"
+                            className="profile__input"
+                            id="email-input"
+                            type="email"
+                            required
+                            placeholder="Ваш Email"
+                            onChange={handleChangeInput}
+                            pattern={EMAIL_PATTERN}
+                            value={enteredValues.email || ''}
+                        />
+                        <span className="profile__input-error">{errors.email}</span>
+                    </label>
 
-            <label className='profile__label'>
-              E-mail
-              <input
-                className={`profile__input ${errors.email ? 'profile__input_error' : ''}`}
-                type='email'
-                name='email'
-                required
-                minLength={5}
-                maxLength={50}
-                onChange={handleChange}
-                value={formValue.email || 'pochta@yandex.ru'}
-              />
-            </label>
+                    <button
+                        type="submit"
+                        disabled={!isFormValid ? true : false}
+                        className={
+                            !isFormValid || isLoading || isLastValues
+                                ? 'profile__btn-save form__button-save_inactive'
+                                : 'profile__btn-save'
+                        }
+                    >
+                        Редактировать
+                    </button>
 
-            <span
-              className={`profile__input-error ${!isValid ? 'profile__input-error_active' : ''}`}
-            >
-              {errors.email}
-            </span>
-          </form>
-
-          <div className={`profile__links ${isEdit ? 'profile__links_hide' : ''}`}>
-            <button className='profile__edit' type='button' onClick={handleEdit}>
-              Редактировать
-            </button>
-            <Link to='/' className='profile__exit'>
-              Выйти из&nbsp;аккаунта
-            </Link>
-          </div>
-
-          <div className={`profile__links ${!isEdit ? 'profile__links_hide' : ''}`}>
-            <span className={`profile__error ${!isValid ? 'profile__error_active' : ''}`}>
-              При обновлении профиля произошла ошибка.
-            </span>
-            <button
-              className={`profile__save ${!isValid ? 'profile__save_disabled' : ''}`}
-              type='submit'
-              onClick={handleSave}
-            >
-              Сохранить
-            </button>
-          </div>
-        </section>
-      </main>
-    </>
-  );
+                    <button onClick={signOut} type="button" className="profile__exit">
+                        Выйти из аккаунта
+                    </button>
+                </form>
+            </section>
+        </>
+    );
 }
 
 export default Profile;
